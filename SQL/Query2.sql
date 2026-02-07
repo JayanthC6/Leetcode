@@ -8,3 +8,4 @@
 */
 
 SELECT NAME From City where Population > 120000 AND COUNTRYCODE = 'USA';
+

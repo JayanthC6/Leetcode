@@ -13,7 +13,7 @@ class Solution:
             if n in last and i - last[n] <= k:
                 return True
             last[n] = i
-        return False
+        return False           #Index mapping approach
 
 '''Example 1:
 

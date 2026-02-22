@@ -1,0 +1,27 @@
+class Solution:
+    def countBinarySubstrings(self, s: str) -> int:
+        curr_group=1
+        pre_group=0
+        ans=0
+        for i in range(1,len(s)):
+            if s[i]==s[i-1]:
+                curr_group+=1
+            else:
+                ans+=min(pre_group,curr_group)
+                pre_group=curr_group
+                curr_group=1
+        ans+=min(pre_group,curr_group)
+        return ans            
+
+'''Example 1:
+
+Input: s = "00110011"
+Output: 6
+Explanation: There are 6 substrings that have equal number of consecutive 1's and 0's: "0011", "01", "1100", "10", "0011", and "01".
+Notice that some of these substrings repeat and are counted the number of times they occur.
+Also, "00110011" is not a valid substring because all the 0's (and 1's) are not grouped together.
+Example 2:
+
+Input: s = "10101"
+Output: 4
+Explanation: There are 4 substrings: "10", "01", "10", "01" that have equal number of consecutive 1's and 0's'''    
